@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SIPRA</title>
+  <meta name="description" content="SIPRA – Sistema Integrado de Protección de Recursos Ambientales" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div>
+        <div class="brand">SIPRA</div>
+        <div class="tagline">Sistema Integrado de Protección de Recursos Ambientales</div>
+      </div>
+      <nav class="nav">
+        <a href="#/">Inicio</a>
+        <a href="#/events">Eventos</a>
+        <a href="#/login">Ingreso</a>
+        <a href="#/admin">Admin</a>
+      </nav>
+    </header>
+
+    <main id="app" class="card"></main>
+
+    <footer class="footer">
+      <div class="line"></div>
+      <div class="footerText">
+        SIPRA v0.7 (Estable) · GitHub Pages · © <span id="year"></span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./config.js"></script>
+  <script type="module" src="./app.js"></script>
+  <script src="https://unpkg.com/heic2any/dist/heic2any.min.js"></script>
+
+  <!-- Photo modal -->
+  <div id="photoModal" class="photoModal hidden" aria-hidden="true">
+    <div class="photoModal__backdrop" data-close="1"></div>
+    <div class="photoModal__panel" role="dialog" aria-modal="true" aria-label="Foto">
+      <div class="photoModal__top">
+        <div class="photoModal__title">Foto</div>
+        <div class="photoModal__actions">
+          <a id="photoModalOpen" class="btn btnGhost" href="#" target="_blank" rel="noopener">Abrir</a>
+          <button id="photoModalClose" class="btn btnDanger" type="button">Cerrar</button>
+        </div>
+      </div>
+      <img id="photoModalImg" class="photoModal__img" alt="Foto del evento" />
+    </div>
+  </div>
+
+
+  <!-- Event detail modal -->
+  <div id="eventModal" class="eventModal hidden" aria-hidden="true">
+    <div class="eventModal__backdrop" data-close="1"></div>
+    <div class="eventModal__panel" role="dialog" aria-modal="true" aria-label="Detalle del evento">
+      <div class="eventModal__head">
+        <div class="eventModal__title">Detalle del evento</div>
+        <button id="eventModalClose" class="btn btn--ghost" type="button">Cerrar</button>
+      </div>
+      <div id="eventModalBody" class="eventModal__body">
+        <div class="notice">Cargando…</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
